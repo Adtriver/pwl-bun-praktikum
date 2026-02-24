@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!-- Tambahkan class="dark" di sini untuk toggle dark mode secara manual -->
+<!-- Hapus class="dark" untuk kembali ke light mode -->
+<html lang="id" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Praktikum 7 — Dark Mode</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Konfigurasi Tailwind: aktifkan dark mode via class
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+</head>
+
+<body>
+
+  <!--
+    Parent element:
+    - Light: bg putih default
+    - Dark : bg-sky-900 h-screen
+  -->
+  <div class="h-screen flex items-center justify-center dark:bg-sky-900">
+
+    <!--
+      Button dari modul + tambahan dark mode:
+      - Light: bg-blue-400 text-white
+      - Dark : bg-red-100 text-gray-900
+    -->
+    <button class="font-extrabold bg-blue-400 text-white p-5
+                   dark:bg-red-100 dark:text-gray-900">
+      Focus on me
+    </button>
+
+  </div>
+
+</body>
+</html>

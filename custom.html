@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Praktikum 8 — Custom Component</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style type="text/tailwindcss">
+    @theme {
+      /* Custom color property */
+      --color-brand: #7c3aed;
+    }
+
+    @layer components {
+      /* Base class untuk semua tab — class yang sama di setiap button */
+      .tab-base {
+        @apply px-4 py-2 text-sm font-medium border-b-2;
+      }
+
+      /* Tab aktif */
+      .tab-active {
+        @apply border-[--color-brand] text-[--color-brand];
+      }
+
+      /* Tab tidak aktif */
+      .tab-inactive {
+        @apply border-transparent text-gray-500
+               hover:text-[--color-brand] hover:border-purple-300
+               transition;
+      }
+    }
+  </style>
+</head>
+<body class="p-10">
+
+  <h1 class="text-xl font-bold mb-6">Praktikum 8 — Custom Component <code>@layer</code></h1>
+
+  <!-- ============================================================ -->
+  <!-- SEBELUM: class panjang & repetitif                           -->
+  <!-- ============================================================ -->
+  <h2 class="text-sm font-semibold text-gray-400 uppercase mb-2">Sebelum (Repetitif)</h2>
+  <div class="w-full max-w-md mb-10">
+    <div class="flex border-b border-gray-300">
+      <!-- Active -->
+      <button class="px-4 py-2 text-sm font-medium border-b-2 border-blue-500 text-blue-600">
+        Tab 1
+      </button>
+      <!-- Inactive — class panjang berulang -->
+      <button class="px-4 py-2 text-sm font-medium border-b-2 border-transparent text-gray-500 hover:text-blue-600 hover:border-blue-300 transition">
+        Tab 2
+      </button>
+      <button class="px-4 py-2 text-sm font-medium border-b-2 border-transparent text-gray-500 hover:text-blue-600 hover:border-blue-300 transition">
+        Tab 3
+      </button>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SESUDAH: ringkas dengan custom component class               -->
+  <!-- ============================================================ -->
+  <h2 class="text-sm font-semibold text-gray-400 uppercase mb-2">Sesudah (Custom Component)</h2>
+  <div class="w-full max-w-md">
+    <div class="flex border-b border-gray-300">
+      <!-- Active -->
+      <button class="tab-base tab-active">
+        Tab 1
+      </button>
+      <!-- Inactive — cukup 2 class -->
+      <button class="tab-base tab-inactive">
+        Tab 2
+      </button>
+      <button class="tab-base tab-inactive">
+        Tab 3
+      </button>
+    </div>
+  </div>
+
+</body>
+</html>

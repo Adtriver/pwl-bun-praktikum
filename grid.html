@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Praktikum 6 — Responsive Grid</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+  <!--
+    Responsive Grid Layout:
+    - Mobile (default) : grid-cols-1 → item susun ke bawah (arah Y)
+    - Desktop (lg+)    : grid-cols-3 → item berjejer ke samping (arah X)
+    - h-screen         : tinggi parent setinggi viewport
+  -->
+  <div class="grid grid-cols-1 lg:grid-cols-3 h-screen">
+
+    <div class="bg-blue-400 flex items-center justify-center text-white text-2xl font-bold">
+      Item 1
+    </div>
+
+    <div class="bg-emerald-400 flex items-center justify-center text-white text-2xl font-bold">
+      Item 2
+    </div>
+
+    <div class="bg-rose-400 flex items-center justify-center text-white text-2xl font-bold">
+      Item 3
+    </div>
+
+  </div>
+
+</body>
+</html>
